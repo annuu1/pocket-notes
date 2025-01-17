@@ -1,0 +1,19 @@
+aside{
+    height: 100vh;
+}
+#addNote{
+ position: fixed;
+ border: none;
+ bottom: 50px;
+ padding: 10px;
+ background-color: #16008B;
+ color: #fff;
+ font-size: 50px;
+ font-weight: 900;
+ border-radius: 50%;
+ cursor: pointer;
+
+}
+#header{
+    position: sticky;
+}

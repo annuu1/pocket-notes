@@ -1,0 +1,10 @@
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bankPageContent{
+    display: flex;
+    flex-direction: column;
+    padding: 100px;
+}
