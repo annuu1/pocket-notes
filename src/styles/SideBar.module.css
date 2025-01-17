@@ -1,5 +1,7 @@
 aside{
     height: 100vh;
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 #addNote{
  position: fixed;
@@ -12,8 +14,9 @@ aside{
  font-weight: 900;
  border-radius: 50%;
  cursor: pointer;
-
 }
 #header{
     position: sticky;
+    top: 0px;
+    background-color: #ffffff;
 }

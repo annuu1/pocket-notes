@@ -8,9 +8,15 @@ const Sidebar = ({ setSelectedNote }) => {
     setSelectedNote(note);
   };
 
+  const handleAddNote = (note) => {
+    setGroups ([...groups, note]);
+  }
+
   return (
-    <aside style={{ width: "20%", padding: "20px" }}>
-      <h2 id={styles.header}>Pocket Notes</h2>
+    <aside style={{ width: "20%", padding: "0 20px",  }}>
+      <div id={styles.header} style={{padding: '40px 10px'}}>
+          <h2>Pocket Notes</h2>
+      </div>
 
       {groups.map((group, index) => {
         return (
@@ -25,7 +31,7 @@ const Sidebar = ({ setSelectedNote }) => {
         );
       })}
 
-      <button id={styles.addNote}>+</button>
+      <button id={styles.addNote} onClick={()=> handleAddNote('hello')}>+</button>
     </aside>
   );
 };
