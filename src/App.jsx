@@ -12,6 +12,13 @@ function App() {
   }
 );
 
+const handleAddGroup = (group) => {
+  setNotes((prevNotes) => ({
+    ...prevNotes,
+    [group]: [], 
+  }));
+};
+
 const handleAddNote = (note) => {
   setNotes((prevNotes) => ({
       ...prevNotes,
@@ -22,7 +29,7 @@ const handleAddNote = (note) => {
   return (
     <>
       <div style={{ display: "flex", width: '100%' }}>
-        <Sidebar setSelectedGroup={setSelectedGroup}  />
+        <Sidebar setSelectedGroup={setSelectedGroup} onAddGroup={handleAddGroup} />
         <MainContent selectedGroup={selectedGroup} notes={notes} onAddNote={handleAddNote}/>
       </div>
     </>

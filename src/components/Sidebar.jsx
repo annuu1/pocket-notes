@@ -1,11 +1,13 @@
 import React from "react";
 import styles from "../styles/SideBar.module.css";
 
-const Sidebar = ({ setSelectedGroup }) => {
+const Sidebar = ({ setSelectedGroup, onAddGroup}) => {
   const [groups, setGroups] = React.useState(["Java", "Python", "C++"]);
+  const [activeGroup, setActiveGroup] = React.useState(null);
 
-  const handleNoteClick = (note) => {
-    setSelectedGroup(note);
+  const handleNoteClick = (group) => {
+    setSelectedGroup(group);
+    setActiveGroup(group);
   };
 
   const handleAddNote = (note) => {
@@ -19,9 +21,20 @@ const Sidebar = ({ setSelectedGroup }) => {
       </div>
 
       {groups.map((group, index) => {
+        const isActive = group === activeGroup;
         return (
           <div
-            style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '10px', cursor: 'pointer' }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '10px',
+              width: '100%',
+              marginTop: '10px',
+              background: isActive ? 'lightblue' : 'transparent',
+              borderRadius: '5px',
+              padding: '5px',
+              cursor: 'pointer',
+            }}
             key={index}
             onClick={() => handleNoteClick(group)} // Handle note click
           >
