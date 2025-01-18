@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/SideBar.module.css";
 import GroupModal from "./GroupModal";
 
-const Sidebar = ({ setSelectedGroup, onAddGroup }) => {
+const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
 
   const [groups, setGroups] = useState([
     { name: "Java", color: "#FF5733" }, // Example color
@@ -22,6 +22,7 @@ const Sidebar = ({ setSelectedGroup, onAddGroup }) => {
   const handleNoteClick = (group) => {
     setSelectedGroup(group.name);
     setActiveGroup(group.name);
+    setSelectedGroupColor(group.color);
   };
 
   const closeModal = () => {

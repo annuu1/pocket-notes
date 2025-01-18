@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/MainContent.module.css";
 import addNote from "../assets/addNote.svg";
 
-const MainContent = ({ selectedGroup, notes, onAddNote }) => {
+const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote }) => {
   const [newNote, setNewNote] = useState("");
 
   const handleAddNote = () => {
@@ -14,13 +14,23 @@ const MainContent = ({ selectedGroup, notes, onAddNote }) => {
     }
   };
 
+   // Utility function to get the initials
+   const getInitials = (group) => {
+    const words = group.split(" ");
+    if (words.length === 1) {
+      return words[0].charAt(0).toUpperCase(); // Only one word
+    } else {
+      return words[0].charAt(0).toUpperCase() + words[1].charAt(0).toUpperCase(); // First letters of the first two words
+    }
+  };
+  
   return (
     <main style={{ width: "80%", background: "#DAE5F5" }}>
       {selectedGroup ? (
         <>
           <div className={style["group-header"]}>
-            <div>
-              <h3>G</h3>
+            <div style={{ backgroundColor: selectedGroupColor }}>
+              <h3 style={{ color: "white" }}>{getInitials(selectedGroup)}</h3>
               </div>
             <h1>{selectedGroup}</h1>
           </div>
