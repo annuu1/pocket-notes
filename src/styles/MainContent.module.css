@@ -27,9 +27,10 @@ main{
     .dateTime {
         position: absolute; 
         bottom: 5px;
-        right: 10px;
-        font-size: 0.8em;
-        color: #888;
+        right: 20px;
+        font-size: 0.9em;
+        font-weight: 500;
+        color: #353535;
     }
 .noteContainer h2{
         font-size: 24px;
