@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import style from "../styles/MainContent.module.css";
+import addNote from "../assets/addNote.svg";
 
 const MainContent = ({ selectedGroup, notes, onAddNote }) => {
   const [newNote, setNewNote] = useState("");
@@ -35,7 +36,7 @@ const MainContent = ({ selectedGroup, notes, onAddNote }) => {
               onChange={(e) => setNewNote(e.target.value)}
             />
             <button id="sendButton" onClick={handleAddNote}>
-              Add Note
+              <img style={{color: 'green'}} src={addNote} alt="add note" />
             </button>
           </div>
         </>
