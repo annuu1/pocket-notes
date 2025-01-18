@@ -7,7 +7,9 @@ const MainContent = ({ selectedGroup, notes, onAddNote }) => {
 
   const handleAddNote = () => {
     if (newNote.trim()) {
-      onAddNote(newNote);
+      const now = new Date();
+      const dateTime = `${now.getDate()} ${now.toLocaleString('default', { month: 'short' })} ${now.getFullYear()} * ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true })}`;
+            onAddNote({ content: newNote, dateTime });
       setNewNote("");
     }
   };
@@ -25,7 +27,8 @@ const MainContent = ({ selectedGroup, notes, onAddNote }) => {
           <div className={style.notesContainer}>
             {notes[selectedGroup].map((note, index) => (
               <div className={style.noteContainer} key={index}>
-                <p>{note}</p>
+                <p>{note['content']}</p>
+                <p className={style.dateTime}>{note['dateTime']}</p>
               </div>
             ))}
           </div>

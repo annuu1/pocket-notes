@@ -6,9 +6,9 @@ import MainContent from './components/MainContent';
 function App() {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [notes, setNotes] = useState({
-    Java: ['This is the content of note 1', 'this is the second note', 'this is the third note'],
-    Python: ['This is the content of note 2', 'this is the second note', 'this is the third note'],
-    'C++': ['This is the content of note 3', 'this is the second note', 'this is the third note'],
+    Java: [{dateTime: "19 Jan 2025 * 02:33 AM", content: 'This is the content of note 1'}],
+    Python: [{dateTime: "19 Jan 2025 * 02:33 AM", content: 'This is the content of note 2'}],
+    'C++': [{dateTime: "19 Jan 2025 * 02:33 AM", content: 'This is the content of note 3'}],
   }
 );
 
