@@ -10,18 +10,7 @@ const Sidebar = ({ setSelectedGroup, onAddGroup}) => {
     setActiveGroup(group);
   };
 
-  const handleAddGroup = () => {
-    const newGroup = prompt("Enter new group name:");
-    if (newGroup && !groups.includes(newGroup)) {
-      setGroups([...groups, newGroup]);
-      onAddGroup(newGroup);
-    } else {
-      alert("Group name is either empty or already exists.");
-    }
-  };
-
   const handleAddNote = (note) => {
-    setGroups ([...groups, note]);
     const newGroup = prompt("Enter new group name:");
     if (newGroup && !groups.includes(newGroup)) {
       setGroups([...groups, newGroup]);
