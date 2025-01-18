@@ -17,7 +17,9 @@ const MainContent = ({ selectedGroup, notes, onAddNote }) => {
       {selectedGroup ? (
         <>
           <div className={style["group-header"]}>
-            <div>G</div>
+            <div>
+              <h3>G</h3>
+              </div>
             <h1>{selectedGroup}</h1>
           </div>
           <div className={style.notesContainer}>
