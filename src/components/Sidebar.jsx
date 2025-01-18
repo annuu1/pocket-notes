@@ -31,8 +31,7 @@ const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
     setSelectedColor("");
   };
 
-  const handleAddNote = (note) => {
-    const newGroup = prompt("Enter new group name:");
+  const handleAddNote = (newGroup) => {
     if (newGroup && !groups.includes(newGroup)) {
       setGroups([...groups, newGroup]);
       onAddGroup(newGroup);
@@ -87,13 +86,19 @@ const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
 
       {isModalOpen && (
         <GroupModal 
+        handleAddNote={handleAddNote}
           groupName={groupName} 
           setGroupName={setGroupName} 
           selectedColor={selectedColor} 
           setSelectedColor={setSelectedColor} 
           onClose={closeModal} 
           onAddGroup={(name, color) => {
+            if(!name || groups.some((group) => group.name === name)) {
+              alert('Invalid group name or group already exists');
+              return;
+            }
             setGroups([...groups, { name, color }]);
+            onAddGroup(name);
             closeModal();
           }} 
         />
