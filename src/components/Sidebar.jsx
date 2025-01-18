@@ -1,21 +1,27 @@
 import React, { useState } from "react";
 import styles from "../styles/SideBar.module.css";
-import GroupModal from "./GroupModal"; // Import the new modal component
+import GroupModal from "./GroupModal";
 
 const Sidebar = ({ setSelectedGroup, onAddGroup }) => {
-  const [groups, setGroups] = useState(["Java", "Python", "C++"]);
+
+  const [groups, setGroups] = useState([
+    { name: "Java", color: "#FF5733" }, // Example color
+    { name: "Python", color: "#33FF57" }, // Example color
+    { name: "C++", color: "#3357FF" }, // Example color
+  ]);
+
   const [activeGroup, setActiveGroup] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for modal visibility
-  const [groupName, setGroupName] = useState(""); // State for group name
-  const [selectedColor, setSelectedColor] = useState(""); // State for selected color
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [groupName, setGroupName] = useState("");
+  const [selectedColor, setSelectedColor] = useState("");
 
   const handleAddGroup = () => {
     setIsModalOpen(true);
   };
 
   const handleNoteClick = (group) => {
-    setSelectedGroup(group);
-    setActiveGroup(group);
+    setSelectedGroup(group.name);
+    setActiveGroup(group.name);
   };
 
   const closeModal = () => {
@@ -36,9 +42,9 @@ const Sidebar = ({ setSelectedGroup, onAddGroup }) => {
 
   // Utility function to get the initials
   const getInitials = (group) => {
-    const words = group.split(" ");
+    const words = group.name.split(" ");
     if (words.length === 1) {
-      return words[0].charAt(0).toUpperCase(); // First letter of the single word
+      return words[0].charAt(0).toUpperCase(); // Only one word
     } else {
       return words[0].charAt(0).toUpperCase() + words[1].charAt(0).toUpperCase(); // First letters of the first two words
     }
@@ -51,7 +57,7 @@ const Sidebar = ({ setSelectedGroup, onAddGroup }) => {
       </div>
 
       {groups.map((group, index) => {
-        const isActive = group === activeGroup;
+        const isActive = group.name === activeGroup;
         return (
           <div
             style={{
@@ -68,10 +74,10 @@ const Sidebar = ({ setSelectedGroup, onAddGroup }) => {
             key={index}
             onClick={() => handleNoteClick(group)}
           >
-            <div className={styles.circle}>
-              <h3>{getInitials(group)}</h3> {/* Use the utility function here */}
+            <div className={styles.circle} style={{ backgroundColor: group.color }}>
+              <h3 style={{ color: 'white' }}>{getInitials(group)}</h3> {/* Use the utility function here */}
             </div>
-            <h1>{group}</h1>
+            <h1>{group.name}</h1>
           </div>
         );
       })}
@@ -86,7 +92,7 @@ const Sidebar = ({ setSelectedGroup, onAddGroup }) => {
           setSelectedColor={setSelectedColor} 
           onClose={closeModal} 
           onAddGroup={(name, color) => {
-            setGroups([...groups, name]);
+            setGroups([...groups, { name, color }]);
             closeModal();
           }} 
         />
