@@ -3,6 +3,19 @@ import style from "../styles/MainContent.module.css";
 
 const MainContent = ({ selectedNote, notes, setNotes }) => {
 
+  function handleAddNote(){
+      notes.map((note)=>{
+        if(note.id.toString() === "2"){
+          // note.content = "hqllooo";
+          note.content.push('hello')
+          console.log(note.content);
+          
+          
+          }
+      })
+      setNotes([...notes]);
+  }
+
   return (
     <main style={{ width: "80%",  background: "#DAE5F5" }}>
       {selectedNote ? (
@@ -25,12 +38,14 @@ const MainContent = ({ selectedNote, notes, setNotes }) => {
 
 
           </div>
-          <textarea name="addNote" id="addNote"></textarea>
+          <div className={style["input-container"]}>
+            <input type="text" id="messageInput" placeholder="Type your message..." />
+            <button id="sendButton" onClick={()=> handleAddNote()}>X/\</button>
+        </div>
         </>
       ) : (
         <div style={{display:"flex", justifyContent:"center", alignItems:"center"}}>
-                <div
-          className={[style.bankPageContent]}
+          <div className={[style.bankPageContent]}
           style={{ width: "50%", textAlign: "center"}}>
 
           <h2>Pocket Notes</h2>

@@ -9,7 +9,13 @@ function App() {
     id: 1,
     title: 'Note 1',
     content: ['This is the content of note 1', 'this is the second note', 'this is the third note']
-  }]);
+  },
+  {
+    id: 2,
+    title: 'Note 2',
+    content: ['This is the content of note 2', 'this is the second note', 'this is the third note']
+  }
+]);
 
   return (
     <>
