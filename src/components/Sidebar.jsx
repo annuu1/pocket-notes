@@ -1,11 +1,11 @@
 import React from "react";
 import styles from "../styles/SideBar.module.css";
 
-const Sidebar = ({ setSelectedNote }) => {
+const Sidebar = ({ setSelectedGroup }) => {
   const [groups, setGroups] = React.useState(["Java", "Python", "C++"]);
 
   const handleNoteClick = (note) => {
-    setSelectedNote(note);
+    setSelectedGroup(note);
   };
 
   const handleAddNote = (note) => {

@@ -1,31 +1,27 @@
 import React, { useState } from "react";
 import style from "../styles/MainContent.module.css";
 
-const MainContent = ({ selectedNote, notes, setNotes }) => {
-  const [newNoteContent, setNewNoteContent] = useState("");
+const MainContent = ({ selectedGroup, notes, onAddNote }) => {
 
-  function handleAddNote() {
-    if (newNoteContent.trim() === "") return;
+  const [newNote, setNewNote] = useState('');
 
-    const newNote = {
-      id: notes.length + 1,
-      content: [newNoteContent],
-    };
-
-    setNotes([...notes, newNote]);
-    setNewNoteContent("");
-  }
-
+  const handleAddNote = () => {
+    if (newNote.trim()) {
+        onAddNote(newNote);
+        setNewNote('');
+    }
+};
+  
   return (
     <main style={{ width: "80%", background: "#DAE5F5" }}>
-      {selectedNote ? (
+      {selectedGroup ? (
         <>
           <div className={style.notesContainer}>
-            {notes.map((note) => (
-              <div className={style.noteContainer} key={note.id}>
-                {note.content.map((content, index) => (
-                  <p key={index}>{content}</p>
-                ))}
+          <h2>{selectedGroup}</h2>
+
+            {notes[selectedGroup].map((note, index) => (
+              <div className={style.noteContainer} key={index}>
+                <p>{note}</p>
               </div>
             ))}
           </div>
@@ -34,8 +30,8 @@ const MainContent = ({ selectedNote, notes, setNotes }) => {
               type="text"
               id="messageInput"
               placeholder="Type your message..."
-              value={newNoteContent}
-              onChange={(e) => setNewNoteContent(e.target.value)}
+              value={newNote}
+              onChange={(e) => setNewNote(e.target.value)}
             />
             <button id="sendButton" onClick={handleAddNote}>Add Note</button>
           </div>

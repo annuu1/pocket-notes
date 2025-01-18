@@ -32,10 +32,10 @@ main{
 }
 .input-container{
     width: 80%;
-    padding: 10px;
+    padding: 20px;
     border: none;
-    border-radius: 5px;
     color: #fff;
+    background-color: #001F8B;
     cursor: pointer;
     position: fixed;
     bottom: 10px;
@@ -45,6 +45,7 @@ main{
     height: 8em;
     border: none;
     padding: 10px;
+    border-radius: 5px;
 }
 .input-container button{
     width: 50px;
