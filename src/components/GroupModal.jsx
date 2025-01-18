@@ -6,15 +6,15 @@ const GroupModal = ({groupName, setGroupName, selectedColor, setSelectedColor, o
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddGroup(groupName, selectedColor); // Call the function to add the group
-    // handleAddNote("anu");
+    onAddGroup(groupName, selectedColor);
   };
 
   return (
     <div className={styles.modalOverlay}>
       <div className={styles.modalContent}>
-        <h2>Add New Group</h2>
+        <h2>Create New Group</h2>
         <form onSubmit={handleSubmit}>
+          <label htmlFor="groupName">Group Name</label>
           <input 
             type="text" 
             value={groupName} 
@@ -22,6 +22,7 @@ const GroupModal = ({groupName, setGroupName, selectedColor, setSelectedColor, o
             placeholder="Enter group name" 
             required 
           />
+          <label htmlFor="selectedColor">Choose Color</label>
           <div className={styles.colorOptions}>
             {colors.map((color) => (
               <div 

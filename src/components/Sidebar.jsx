@@ -86,7 +86,6 @@ const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
 
       {isModalOpen && (
         <GroupModal 
-        handleAddNote={handleAddNote}
           groupName={groupName} 
           setGroupName={setGroupName} 
           selectedColor={selectedColor} 
