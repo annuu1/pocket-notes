@@ -25,7 +25,9 @@ const Sidebar = ({ setSelectedGroup }) => {
             key={index}
             onClick={() => handleNoteClick(group)} // Handle note click
           >
-            <div style={{ padding: '10px', borderRadius: '50%', background: 'red' }}>G</div>
+            <div className={styles.circle}>
+              <h3>G</h3>
+              </div>
             <h1>{group}</h1>
           </div>
         );

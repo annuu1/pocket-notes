@@ -4,10 +4,13 @@ aside{
     overflow-y: scroll;
 }
 #addNote{
- position: fixed;
+    height: 60px;
+    width: 60px;
+ position: sticky;
  border: none;
  bottom: 50px;
- padding: 10px;
+ left: 100%;
+ padding: 0px;
  background-color: #16008B;
  color: #fff;
  font-size: 50px;
@@ -19,4 +22,12 @@ aside{
     position: sticky;
     top: 0px;
     background-color: #ffffff;
+}
+.circle {
+    width: 40px; /* Set width */
+    height: 40px; /* Set height */
+    border-radius: 50%; /* Make it a circle */
+    background: red; /* Circle color */
+    padding: 5px;
+    text-align: center;
 }
