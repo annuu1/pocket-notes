@@ -24,6 +24,9 @@ aside{
     background-color: #ffffff;
 }
 .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 40px; /* Set width */
     height: 40px; /* Set height */
     border-radius: 50%; /* Make it a circle */
