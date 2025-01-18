@@ -2,7 +2,7 @@ import React from "react";
 import styles from "../styles/GroupModal.module.css"; // Create a CSS file for modal styles
 
 const GroupModal = ({ groupName, setGroupName, selectedColor, setSelectedColor, onClose, onAddGroup }) => {
-  const colors = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33"];
+  const colors = ["#CCCCCC", "#FF79F2", "#43E6FC", "#F19576", "#0047FF", "#6691FF"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
