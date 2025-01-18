@@ -21,7 +21,7 @@ const Sidebar = ({ setSelectedGroup }) => {
       {groups.map((group, index) => {
         return (
           <div
-            style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '10px' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '10px', marginTop: '10px', cursor: 'pointer' }}
             key={index}
             onClick={() => handleNoteClick(group)} // Handle note click
           >
