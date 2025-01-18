@@ -10,31 +10,34 @@ const GroupModal = ({groupName, setGroupName, selectedColor, setSelectedColor, o
   };
 
   return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.modalContent}>
+    <div className={styles.modalOverlay} onClick={onClose}>
+      <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
         <h2>Create New Group</h2>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="groupName">Group Name</label>
-          <input 
-            type="text" 
-            value={groupName} 
-            onChange={(e) => setGroupName(e.target.value)} 
-            placeholder="Enter group name" 
-            required 
-          />
-          <label htmlFor="selectedColor">Choose Color</label>
-          <div className={styles.colorOptions}>
-            {colors.map((color) => (
-              <div 
-                key={color} 
-                className={styles.colorCircle} 
-                style={{ backgroundColor: color }} 
-                onClick={() => setSelectedColor(color)} 
-              />
-            ))}
+          <div className={styles.inputGroup}>
+            <label htmlFor="groupName">Group Name</label>
+            <input 
+              type="text" 
+              value={groupName} 
+              onChange={(e) => setGroupName(e.target.value)} 
+              placeholder="Enter group name" 
+              required 
+            />
           </div>
-          <button type="submit">Add Group</button>
-          <button type="button" onClick={onClose}>Cancel</button>
+          <div className={styles.inputGroup}>
+            <label htmlFor="selectedColor">Choose Color</label>
+            <div className={styles.colorOptions}>
+              {colors.map((color) => (
+                <div 
+                  key={color} 
+                  className={styles.colorCircle} 
+                  style={{ backgroundColor: color }} 
+                  onClick={() => setSelectedColor(color)} 
+                />
+              ))}
+            </div>
+          </div>
+          <button type="submit">Create</button>
         </form>
       </div>
     </div>
