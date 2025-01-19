@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import style from "../styles/MainContent.module.css";
 import addNote from "../assets/addNote.svg";
+import backbtn from "../assets/backbtn.svg";
 
 const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote, isSidebarVisible, setIsSidebarVisible }) => {
   const [newNote, setNewNote] = useState("");
@@ -29,6 +30,7 @@ const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote, isSi
       {selectedGroup ? (
         <>
           <div className={style["group-header"]}>
+          {!isSidebarVisible && <img src={backbtn} alt="back" className={style.backbtn} onClick={() => setIsSidebarVisible(true)} />}
             <div style={{ backgroundColor: selectedGroupColor }}>
               <h3 style={{ color: "white" }}>{getInitials(selectedGroup)}</h3>
               </div>

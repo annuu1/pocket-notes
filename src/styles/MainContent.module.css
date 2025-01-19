@@ -51,6 +51,9 @@
         margin-bottom: 10px;
         
 }
+.backbtn{
+    display: none;
+}
 .input-container{
     width: 80%;
     padding: 20px;
@@ -107,6 +110,10 @@
      }
      .input-container{
         width: 100%;
+     }
+     .backbtn{
+        display: inline;
+        margin-right: 10px;
      }
     
 }
