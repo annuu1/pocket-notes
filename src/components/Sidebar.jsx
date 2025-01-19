@@ -51,7 +51,7 @@ const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
   };
 
   return (
-    <aside style={{ width: "20%", padding: "0 20px" }}>
+    <aside>
       <div id={styles.header} style={{ padding: '40px 10px' }}>
         <h2>Pocket Notes</h2>
       </div>

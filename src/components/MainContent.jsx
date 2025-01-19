@@ -25,7 +25,7 @@ const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote }) =>
   };
   
   return (
-    <main style={{ width: "80%", background: "#DAE5F5" }}>
+    <main>
       {selectedGroup ? (
         <>
           <div className={style["group-header"]}>

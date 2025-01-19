@@ -2,6 +2,8 @@ aside{
     height: 100vh;
     max-height: 100vh;
     overflow-y: scroll;
+    width: 20%;
+    padding: 0 20px;
 }
 #addNote {
     height: 60px;
@@ -34,3 +36,13 @@ aside{
     padding: 5px;
     text-align: center;
 }
+@media (max-width: 768px) {
+    aside{
+        width: 100%;
+    }
+    #addNote{
+        position: fixed;
+        bottom: 20px;
+        left: 80%;
+    }
+  }

@@ -1,6 +1,8 @@
 main{
     display: flex;
     flex-direction: column;
+    width: 80%; 
+    background: #DAE5F5;
 }
 .bankPageContent{
     display: flex;
@@ -82,4 +84,11 @@ main{
     height: 50px;
     width: 50px;
     text-align: center; 
+}
+
+@media (max-width: 768px) {
+    main{
+        display: none;
+    }
+    
 }
