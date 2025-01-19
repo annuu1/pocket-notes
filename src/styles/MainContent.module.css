@@ -121,3 +121,14 @@
      }
     
 }
+
+@media (min-width: 769px) {
+    .hidden{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 80%; 
+        background: #DAE5F5;
+    }
+}
