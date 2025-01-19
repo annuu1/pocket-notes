@@ -8,8 +8,8 @@ function App() {
   const [selectedGroupColor, setSelectedGroupColor] = useState(null);
   const [notes, setNotes] = useState({
     Java: [{dateTime: "19 Jan 2025 * 02:33 AM", content: 'This is the content of note 1'}],
-    Python: [{dateTime: "19 Jan 2025 * 02:33 AM", content: 'This is the content of note 2'}],
-    'C++': [{dateTime: "19 Jan 2025 * 02:33 AM", content: 'This is the content of note 3'}],
+    Python: [{dateTime: "19 Jan 2025 * 01:42 AM", content: 'This is the content of note 2'}],
+    'C++': [{dateTime: "19 Jan 2025 * 12:51 AM", content: 'This is the content of note 3'}],
   }
 );
 
