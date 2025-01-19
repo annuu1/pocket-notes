@@ -65,7 +65,7 @@ const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote }) =>
         >
           <div
             className={[style.bankPageContent]}
-            style={{ width: "50%", textAlign: "center" }}
+            style={{  }}
           >
             <h2>Pocket Notes</h2>
             <img

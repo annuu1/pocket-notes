@@ -8,6 +8,8 @@ main{
     display: flex;
     flex-direction: column;
     padding: 100px;
+    width: 50%;
+    text-align: center;
 }
 .notesContainer{
     display: flex;
