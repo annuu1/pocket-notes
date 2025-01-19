@@ -13,6 +13,11 @@ function App() {
   }
 );
 
+const [isSidebarVisible, setIsSidebarVisible] = useState(true);
+
+const toggleSidebar = () => {
+  setIsSidebarVisible(!isSidebarVisible);
+}
 const handleAddGroup = (group) => {
   setNotes((prevNotes) => ({
     ...prevNotes,
@@ -30,8 +35,8 @@ const handleAddNote = (note) => {
   return (
     <>
       <div style={{ display: "flex", width: '100%' }}>
-        <Sidebar setSelectedGroup={setSelectedGroup} setSelectedGroupColor={setSelectedGroupColor} onAddGroup={handleAddGroup} />
-        <MainContent selectedGroup={selectedGroup} selectedGroupColor={selectedGroupColor} notes={notes} onAddNote={handleAddNote}/>
+        <Sidebar setSelectedGroup={setSelectedGroup} setSelectedGroupColor={setSelectedGroupColor} onAddGroup={handleAddGroup} isSidebarVisible={isSidebarVisible} setIsSidebarVisible={setIsSidebarVisible}  />
+        <MainContent selectedGroup={selectedGroup} selectedGroupColor={selectedGroupColor} notes={notes} onAddNote={handleAddNote} isSidebarVisible={isSidebarVisible} setIsSidebarVisible={setIsSidebarVisible}/>
       </div>
     </>
   );

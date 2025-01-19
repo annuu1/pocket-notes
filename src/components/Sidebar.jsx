@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styles from "../styles/SideBar.module.css";
 import GroupModal from "./GroupModal";
 
-const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
+const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup, isSidebarVisible, setIsSidebarVisible }) => {
 
   const [groups, setGroups] = useState([
     { name: "Java", color: "#FF5733" }, 
@@ -23,6 +23,7 @@ const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
     setSelectedGroup(group.name);
     setActiveGroup(group.name);
     setSelectedGroupColor(group.color);
+    setIsSidebarVisible(false);
   };
 
   const closeModal = () => {
@@ -31,14 +32,14 @@ const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
     setSelectedColor("");
   };
 
-  const handleAddNote = (newGroup) => {
-    if (newGroup && !groups.includes(newGroup)) {
-      setGroups([...groups, newGroup]);
-      onAddGroup(newGroup);
-    } else {
-      alert("Group name is either empty or already exists.");
-    }
-  };
+  // const handleAddNote = (newGroup) => {
+  //   if (newGroup && !groups.includes(newGroup)) {
+  //     setGroups([...groups, newGroup]);
+  //     onAddGroup(newGroup);
+  //   } else {
+  //     alert("Group name is either empty or already exists.");
+  //   }
+  // };
 
   // Utility function to get the initials
   const getInitials = (group) => {
@@ -51,7 +52,7 @@ const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
   };
 
   return (
-    <aside>
+    <aside className={`${isSidebarVisible ? "sidebar-visible" : styles["sidebar-hidden"]}`}>
       <div id={styles.header} style={{ padding: '40px 10px' }}>
         <h2>Pocket Notes</h2>
       </div>

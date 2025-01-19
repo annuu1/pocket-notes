@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/MainContent.module.css";
 import addNote from "../assets/addNote.svg";
 
-const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote }) => {
+const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote, isSidebarVisible, setIsSidebarVisible }) => {
   const [newNote, setNewNote] = useState("");
 
   const handleAddNote = () => {
@@ -25,7 +25,7 @@ const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote }) =>
   };
   
   return (
-    <main>
+    <main className={isSidebarVisible ? style.hidden : style.visible}>
       {selectedGroup ? (
         <>
           <div className={style["group-header"]}>
@@ -37,7 +37,7 @@ const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote }) =>
           <div className={style.notesContainer}>
             {notes[selectedGroup].map((note, index) => (
               <div className={style.noteContainer} key={index}>
-                <p>{note['content']}</p>
+                <p className={style.note}>{note['content']}</p>
                 <p className={style.dateTime}>{note['dateTime']}</p>
               </div>
             ))}
