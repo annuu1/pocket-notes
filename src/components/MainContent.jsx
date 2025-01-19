@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import style from "../styles/MainContent.module.css";
 import addNote from "../assets/addNote.svg";
 import backbtn from "../assets/backbtn.svg";
+import disabledNote from "../assets/disabledNote.svg";
 
 const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote, isSidebarVisible, setIsSidebarVisible }) => {
   const [newNote, setNewNote] = useState("");
@@ -52,8 +53,14 @@ const MainContent = ({ selectedGroup, selectedGroupColor, notes, onAddNote, isSi
               value={newNote}
               onChange={(e) => setNewNote(e.target.value)}
             />
-            <button id="sendButton" onClick={handleAddNote}>
-              <img style={{color: 'green'}} src={addNote} alt="add note" />
+            <button id="sendButton" onClick={handleAddNote} disabled={!newNote} >
+              {!newNote ? (
+                <img src={disabledNote} alt="disabled note" />
+              ) : (
+                <img src={addNote} alt="add note" />
+              )
+
+              }
             </button>
           </div>
         </>
