@@ -5,9 +5,9 @@ import GroupModal from "./GroupModal";
 const Sidebar = ({ setSelectedGroup, setSelectedGroupColor, onAddGroup }) => {
 
   const [groups, setGroups] = useState([
-    { name: "Java", color: "#FF5733" }, // Example color
-    { name: "Python", color: "#33FF57" }, // Example color
-    { name: "C++", color: "#3357FF" }, // Example color
+    { name: "Java", color: "#FF5733" }, 
+    { name: "Python", color: "#33FF57" }, 
+    { name: "C++", color: "#3357FF" }, 
   ]);
 
   const [activeGroup, setActiveGroup] = useState(null);
