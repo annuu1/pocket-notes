@@ -53,3 +53,14 @@ button[type="submit"] {
 .inputGroup label {
   margin-bottom: 5px; /* Space between label and input */
 }
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .modalContent{
+    width: 80%;
+  }
+}
